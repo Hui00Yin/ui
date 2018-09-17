@@ -1,0 +1,19 @@
+<div #start class="content background">
+  <mat-grid-list class="full-width" cols="3" [rowHeight]="RowHeight" gutterSize="0px">
+    <mat-grid-tile *ngFor="let tile of tiles">
+      <mat-card>
+        <mat-card-title >{{tile.name}}</mat-card-title>
+        <mat-card-content>
+          <p> Upgrade Versio service and channel systems</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-raised-button color="primary"
+                               routerLinkActive
+                               #routerLinkActiveInstance="routerLinkActive"
+                               [routerLink]="[tile.route]">
+            Enter</a>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

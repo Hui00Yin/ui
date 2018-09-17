@@ -1,0 +1,44 @@
+<mat-card class="container">
+  <mat-toolbar>
+    <p>
+      <button mat-button color="accent" (click)="newHost()">New</button>
+      <button mat-button color="accent">Edit</button>
+      <button mat-button color="accent">Delete</button>
+    </p>
+  </mat-toolbar>
+  <form *ngIf="isHide()" #f=ngForm>
+    <table style="width:100%" cellspacing="10px">
+      <tr>
+        <td>
+          <mat-form-field style="width: 100%" >
+            <mat-label>Hostname/IP</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field style="width: 100%">
+            <mat-label>User name</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field style="width: 100%">
+            <mat-label>Password</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field style="width: 100%">
+            <mat-label>Catagary</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <p><button mat-raised-button color="primary" (click)="submit()">Submit</button></p>
+      </tr>
+    </table>
+  </form>
+</mat-card>
