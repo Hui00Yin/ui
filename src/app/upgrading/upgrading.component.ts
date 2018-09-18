@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 
 @Component({
@@ -9,8 +9,15 @@ import { ErrorStateMatcher } from '@angular/material';
 })
 export class UpgradingComponent implements OnInit {
   _ishide = false;
+  host: FormGroup;
 
-  constructor() { }
+  constructor(fb: FormBuilder) {
+    this.host = fb.group({
+      'name': ['host001'],
+      'user': ['howard'],
+      'pwd': ['123456'],
+      'cata': ['testing']});
+  }
 
   ngOnInit() {
   }
