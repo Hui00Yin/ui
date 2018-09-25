@@ -1,5 +1,5 @@
 import {SelectionModel} from '@angular/cdk/collections';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit,Input,Output, OnChanges } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
 
 export interface Host {
@@ -20,15 +20,24 @@ const HOST_DATA: Host[] = [
   templateUrl: './select-table.component.html',
   styleUrls: ['./select-table.component.scss']
 })
-export class SelectTableComponent implements OnInit {
+export class SelectTableComponent implements OnInit, OnChanges {
+  @Input() tableData: Host[];
+  @Output() selectedRows = new EventEmitter<Host[]>();
+
   displayedColumns: string[] = ['select', 'hostname', 'user','password','cata'];
 
-  dataSource = new MatTableDataSource<Host>(HOST_DATA);
-  selection = new SelectionModel<Host>(true, []);
+  dataSource: MatTableDataSource<Host>;
+  selection: SelectionModel<Host>;
 
   constructor() { }
 
   ngOnInit() {
+    this.dataSource = new MatTableDataSource<Host>(this.tableData);
+    this.selection = new SelectionModel<Host>(true, []);
+  }
+
+  ngOnChanges(){
+    this.dataSource = new MatTableDataSource<Host>(this.tableData);
   }
 
   isAllSelected(){
@@ -42,6 +51,15 @@ export class SelectTableComponent implements OnInit {
     this.isAllSelected()?
       this.selection.clear():
       this.dataSource.data.forEach(row => this.selection.select(row));
+    this.selectedRows.emit(this.selection.selected);
+    console.log("The tableData is: in allToggle", this.tableData.length);
   }
+
+  emitSelectedRow(row:any){
+    this.selection.toggle(row);
+    this.selectedRows.emit(this.selection.selected);
+  } 
+
+  
 
 }

@@ -7,7 +7,7 @@
       </mat-checkbox> 
   </th> 
     <td mat-cell *matCellDef="let row">
-      <mat-checkbox (click)="$event.stopPropagation()" (change)="$event? selection.toggle(row): null"
+      <mat-checkbox (click)="$event.stopPropagation()" (change)="changeCheckBox($event, row)"
                 [checked]="selection.isSelected(row)">
       </mat-checkbox>
     </td>
@@ -30,6 +30,6 @@
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns:displayedColumns;"
-                (click)="selection.toggle(row)"></tr>
+                (click)="emitSelectedRow(row)"></tr>
 </table>
 
