@@ -14,6 +14,7 @@ import {APP_ROUTES} from './routes';
 import { UpgradeServicesComponent } from './upgrade-services/upgrade-services.component';
 import { GridComponent } from './grid/grid.component';
 import { UpgradingComponent } from './upgrading/upgrading.component';
+import { SelectTableComponent } from './select-table/select-table.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { UpgradingComponent } from './upgrading/upgrading.component';
     AppComponent,
     UpgradeServicesComponent,
     GridComponent,
-    UpgradingComponent
+    UpgradingComponent,
+    SelectTableComponent
   ],
   providers: [],
   //bootstrap: [EntryApp]
