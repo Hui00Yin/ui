@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, BehaviorSubject} from 'rxjs'
-
+  /*
 export interface Host {
   hostname: string;
   user:     string;
@@ -15,12 +15,14 @@ const HOST_DATA: Host[] = [
 
 @Injectable()
 export class Loading {
-  private _hosts: BehaviorSubject<Host[]> = new BehaviorSubject<Host[]>(HOST_DATA);
+  private _hosts: BehaviorSubject<Host[]>; 
 
   get hosts(): Host[] { return this._hosts.value;}
   set hosts(hs: Host[]) { this._hosts.next(hs);}
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient){
+    this._hosts = new BehaviorSubject<Host[]>(HOST_DATA); 
+  }
 
   GetHostStream():Observable<Host[]>{
     return this._hosts.asObservable();
@@ -31,4 +33,4 @@ export class Loading {
   }
 }
 
-
+   */

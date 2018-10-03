@@ -3,7 +3,7 @@
     <p>
     <button mat-button color="accent" (click)="newHost()">New</button>
     <button mat-button color="accent">Edit</button>
-    <button mat-button color="accent">Delete</button>
+    <button mat-button color="accent" (click) = "onDelete()">Delete</button>
     </p>
   </mat-toolbar>
   <form *ngIf="isHide()" [formGroup]="host" (ngSubmit)="onSubmit(host.value)">
@@ -41,5 +41,5 @@
       </tr>
     </table>
   </form>
-  <select-table [tableData]="hosts" (selectedRows)="updateHosts($event)"></select-table>
+  <select-table></select-table>
 </mat-card>

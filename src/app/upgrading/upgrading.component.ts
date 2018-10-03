@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators} from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
-import { Host } from '../select-table/select-table.component';
+import { Host } from '../select-host.service';
+import { SelectHostService} from '../select-host.service'
 
 @Component({
   selector: 'app-upgrading',
@@ -14,19 +15,12 @@ export class UpgradingComponent implements OnInit {
   hosts: Host[];
   selectedHosts: Host[];
 
-  constructor(fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private selectService:SelectHostService<Host> ) {
     this.host = fb.group({
       'hostname': ['host001'],
       'user': ['howard'],
       'password': ['123456'],
       'cata': ['testing']});
-    this.hosts = [
-  {hostname: 'howard001', user:'howard', password:'123', cata:'test'},
-  {hostname: 'howard002', user:'howard', password:'123', cata:'develop'},
-  {hostname: 'howard003', user:'howard', password:'123', cata:'develop'},
-  {hostname: 'howard004', user:'howard', password:'123', cata:'develop'},
-  {hostname: 'howard005', user:'howard', password:'123', cata:'develop'},
-];
   }
 
   ngOnInit() {
@@ -42,15 +36,12 @@ export class UpgradingComponent implements OnInit {
 
   onSubmit = (value: Host) => {
     this._ishide =false;
-    let cloneArray = this.hosts.map(obj => Object.assign({}, obj));
+    this.selectService.newHost(value);
+    /*let cloneArray = this.hosts.map(obj => Object.assign({}, obj));
     cloneArray.push(value);
     this.hosts = cloneArray;
-    console.log("onSubmit: ", this.hosts);
+    console.log("onSubmit: ", this.hosts);*/
   }
 
-  updateHosts(selected: Host[]){
-    this.selectedHosts = selected;  
-    console.log("updateHosts: ", this.selectedHosts);
-  }
-
+  onDelete = () => this.selectService.delHosts();
 }

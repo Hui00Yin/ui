@@ -1,19 +1,7 @@
 import {SelectionModel} from '@angular/cdk/collections';
 import { Component, EventEmitter, OnInit,Input,Output, OnChanges } from '@angular/core';
 import {MatTableDataSource} from '@angular/material';
-
-export interface Host {
-  hostname: string;
-  user:     string;
-  password: string;
-  cata:     string;
-}
-
-const HOST_DATA: Host[] = [
-  {hostname: 'howard001', user:'howard', password:'123', cata:'test'},
-  {hostname: 'howard002', user:'howard', password:'123', cata:'develop'},
-];
-
+import {Host, SelectHostService} from '../select-host.service'
 
 @Component({
   selector: 'select-table',
@@ -21,45 +9,41 @@ const HOST_DATA: Host[] = [
   styleUrls: ['./select-table.component.scss']
 })
 export class SelectTableComponent implements OnInit, OnChanges {
-  @Input() tableData: Host[];
-  @Output() selectedRows = new EventEmitter<Host[]>();
 
   displayedColumns: string[] = ['select', 'hostname', 'user','password','cata'];
 
-  dataSource: MatTableDataSource<Host>;
-  selection: SelectionModel<Host>;
+  dataSource: SelectHostService<Host>;
 
-  constructor() { }
+  constructor(private selectService: SelectHostService<Host>) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<Host>(this.tableData);
-    this.selection = new SelectionModel<Host>(true, []);
+    this.dataSource = this.selectService;
   }
 
   ngOnChanges(){
-    this.dataSource = new MatTableDataSource<Host>(this.tableData);
   }
 
-  isAllSelected(){
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
+  hasValue(){
+    this.selectService.hasValue();
+  }
 
-    return numSelected === numRows;
+  isSelected(row:any){
+    return this.selectService.selection.isSelected(row);
+}
+
+  isAllSelected(){
+    return this.selectService.isAllSelected();
   }
 
   allToggle(){
-    this.isAllSelected()?
-      this.selection.clear():
-      this.dataSource.data.forEach(row => this.selection.select(row));
-    this.selectedRows.emit(this.selection.selected);
-    console.log("The tableData is: in allToggle", this.tableData.length);
+    this.selectService.allToggle();
   }
 
   emitSelectedRow(row:any){
-    this.selection.toggle(row);
-    this.selectedRows.emit(this.selection.selected);
+    this.selectService.toggleRow(row);
   } 
 
-  
-
+  changeCheckBox($event, row) {
+    return $event? this.selectService.selection.toggle(row): null;
+  }
 }
