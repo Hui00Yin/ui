@@ -10,7 +10,7 @@ import {Host, SelectHostService} from '../select-host.service'
 })
 export class SelectTableComponent implements OnInit, OnChanges {
 
-  displayedColumns: string[] = ['select', 'hostname', 'user','password','cata'];
+  displayedColumns: string[] = ['select', 'hostname', 'user','password','cata','star'];
 
   dataSource: SelectHostService<Host>;
 

@@ -1,0 +1,10 @@
+<div class="menu-section">
+    <button (click)="$event.stopPropagation()" mat-icon-button [matMenuTriggerFor]="anchorMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  <mat-menu #anchorMenu="matMenu">
+    <a mat-menu-item *ngFor="let item of items" (click)="onClick(item.text)" [disabled]="item.disabled">
+      {{item.text}}
+    </a>
+  </mat-menu>
+</div>
