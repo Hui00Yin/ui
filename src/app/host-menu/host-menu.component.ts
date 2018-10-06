@@ -19,7 +19,7 @@ export class HostMenuComponent implements OnInit {
     {text: 'Profile'},
     {text: 'Start'},
     {text: 'Stop'},
-    {text: 'Delete', disabled: true}
+    {text: 'Delete', disabled: false}
   ]
 
   onClick(itemText: string) {
