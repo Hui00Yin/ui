@@ -10,7 +10,7 @@ export class GridComponent implements OnInit {
   tiles: {name: string, route: string}[] =[
     {name:'Upgrading', route:'/upgrading'},
     {name:'Card',route:'/upgrade-services'},
-    {name:'three',route:'/upgrade-channels'},
+    {name:'Main Navigation',route:'/main-nav'},
     {name:'four',route:'/upgrade-channels'},
     {name:'five',route:'/upgrade-channels'},
     {name:'six',route:'/upgrade-channels'},

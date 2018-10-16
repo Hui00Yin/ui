@@ -16,6 +16,7 @@ import { GridComponent } from './grid/grid.component';
 import { UpgradingComponent } from './upgrading/upgrading.component';
 import { SelectTableComponent } from './select-table/select-table.component';
 import { HostMenuComponent } from './host-menu/host-menu.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { HostMenuComponent } from './host-menu/host-menu.component';
     GridComponent,
     UpgradingComponent,
     SelectTableComponent,
-    HostMenuComponent
+    HostMenuComponent,
+    MainNavComponent
   ],
   providers: [],
   //bootstrap: [EntryApp]
