@@ -17,6 +17,7 @@ import { UpgradingComponent } from './upgrading/upgrading.component';
 import { SelectTableComponent } from './select-table/select-table.component';
 import { HostMenuComponent } from './host-menu/host-menu.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { PostexpressComponent } from './postexpress/postexpress.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     UpgradingComponent,
     SelectTableComponent,
     HostMenuComponent,
-    MainNavComponent
+    MainNavComponent,
+    PostexpressComponent
   ],
   providers: [],
   //bootstrap: [EntryApp]
