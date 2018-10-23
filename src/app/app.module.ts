@@ -18,6 +18,7 @@ import { SelectTableComponent } from './select-table/select-table.component';
 import { HostMenuComponent } from './host-menu/host-menu.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { PostexpressComponent } from './postexpress/postexpress.component';
+import { OrdersSelectComponent } from './orders-select/orders-select.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { PostexpressComponent } from './postexpress/postexpress.component';
     SelectTableComponent,
     HostMenuComponent,
     MainNavComponent,
-    PostexpressComponent
+    PostexpressComponent,
+    OrdersSelectComponent
   ],
   providers: [],
   //bootstrap: [EntryApp]
