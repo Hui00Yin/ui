@@ -1,0 +1,27 @@
+.side-nav-area{
+  position: fixed;
+  top:0px;
+  bottom:0px;
+  margin-top:60px;
+  width:80vw;
+  display: flex;
+  flex-direction: column;
+
+  .mat-toolbar{
+    flex: 0;
+  }
+
+  .mat-sidenav-container{
+    flex:1;
+
+    .mat-sidenav{
+        width: 400px;
+        border-left-style: solid;
+        border-left-width: 15px;
+        border-left-color: grey;
+    }
+  }
+}
+
+
+

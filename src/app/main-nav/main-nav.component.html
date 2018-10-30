@@ -1,0 +1,15 @@
+<div class="content-container side-nav-area">
+    <p>Welcome to side navigation practice component!</p>
+  <mat-sidenav-container>
+    <mat-sidenav #right position="end" mode="side"></mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <div>
+          <button mat-raised-button (click)="right.open(undefined, 'mouse')">Open</button>
+          <button mat-raised-button (click)="right.close(undefined, 'mouse')">Close</button>
+          <button mat-raised-button (click)="right.toggle(undefined, 'mouse')">Toggle SideNav</button>
+        </div>
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
