@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridComponent implements OnInit {
   RowHeight = 200;
-  tiles: {name: string, route: string}[] =[
-    {name:'Upgrading', route:'/upgrading'},
-    {name:'Card',route:'/upgrade-services'},
-    {name:'Main Navigation',route:'/main-nav'},
-    {name:'Post Express',route:'/postexpress'},
-    {name:'five',route:'/upgrade-channels'},
-    {name:'six',route:'/upgrade-channels'},
+  tiles: {name: string, description: string, route: string}[] =[
+    {name:'Upgrading', description: "Upgrade services", route:'/upgrading'},
+    {name:'Card', description: "Card examples",route:'/upgrade-services'},
+    {name:'Main Navigation', description: "Navigation examples",route:'/main-nav'},
+    {name:'Post Express', description: "A shopping cart project",route:'/postexpress'},
+    {name:'Fancy Resume', description: "Create a fancy dynamic resume template",route:'/fancyresume'},
+    {name:'Fancy Resume Version 2', description: "Create a fancy dynamic resume template version 2",route:'/fancyresume002'},
+    {name:'six', description: "to be defined",route:'/upgrade-channels'},
+    {name:'six', description: "to be defined",route:'/upgrade-channels'},
+    {name:'six', description: "to be defined",route:'/upgrade-channels'},
+    {name:'six', description: "to be defined",route:'/upgrade-channels'},
+    {name:'six', description: "to be defined",route:'/upgrade-channels'},
+    {name:'six', description: "to be defined",route:'/upgrade-channels'},
   ]
 
   constructor() { }
