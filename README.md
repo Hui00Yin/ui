@@ -1,6 +1,9 @@
 # Ui
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+This is a collection of angular UI projects.
+Now it has:
+1. upgrade service for multiple hosts.
+2. A shopping cart project.
+3. Fancy resume generator. It will generate a fancy resume based on template you chose and information you provided with forms.
 
 ## Development server
 
