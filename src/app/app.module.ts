@@ -19,10 +19,11 @@ import { HostMenuComponent } from './host-menu/host-menu.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { PostexpressComponent } from './postexpress/postexpress.component';
 import { OrdersSelectComponent } from './orders-select/orders-select.component';
-import { FancyresumeComponent } from './fancyresume/fancyresume.component';
+import { FancyresumeComponent } from './fancy001/fancyresume.component';
 import { FancyreV002Component } from './fancyre-v002/fancyre-v002.component';
 import { InfoFormComponent } from './fancyre-v002/info-form/info-form.component';
 import { ReTemplateComponent } from './fancyre-v002/re-template/re-template.component';
+import { RxjsCacheComponent } from './rxjs-cache/rxjs-cache.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { ReTemplateComponent } from './fancyre-v002/re-template/re-template.comp
     FancyresumeComponent,
     FancyreV002Component,
     InfoFormComponent,
-    ReTemplateComponent
+    ReTemplateComponent,
+    RxjsCacheComponent
   ],
   providers: [],
   //bootstrap: [EntryApp]

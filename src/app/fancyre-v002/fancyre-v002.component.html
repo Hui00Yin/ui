@@ -1,6 +1,6 @@
 <div class="demo-sidenav-area">
   <mat-sidenav-container>
-    <mat-sidenav #start (opened)="myinput.focus()" [mode]="mode"
+    <mat-sidenav #start (opened)="myinput.focus()" mode="side"
                  [fixedInViewport]="fixed" [fixedTopGap]="fixedTop" [fixedBottomGap]="fixedBottom">
       Start Side Sidenav
       <br>
@@ -19,29 +19,11 @@
       <div class="demo-sidenav-content">
         <app-re-template [name]="name" [birth]="birth" [contact]="contact" [experiences] = "experiences" [educations] = "educations" ></app-re-template>
         <div>
-          <button mat-raised-button (click)="isLaunched = false">
-            Exit Fullscreen Sidenav Demo
-          </button>
-        </div>
-
-        <div>
           <h3>Sidenav</h3>
           <button mat-button (click)="start.toggle(undefined, 'mouse')">Toggle Start Side Sidenav</button>
           <button mat-button (click)="end.toggle(undefined, 'mouse')">Toggle End Side Sidenav</button>
-          <mat-checkbox [(ngModel)]="hasBackdrop">Has backdrop</mat-checkbox>
-          <mat-checkbox [(ngModel)]="fixed">Fixed mode</mat-checkbox>
-          <mat-checkbox [(ngModel)]="coverHeader">Sidenav covers header/footer</mat-checkbox>
         </div>
-
-        <div>
-          <h3>Header / Footer</h3>
-          <mat-checkbox [(ngModel)]="showHeader">Show header</mat-checkbox>
-          <mat-checkbox [(ngModel)]="showFooter">Show footer</mat-checkbox>
-        </div>
-
-        <div class="demo-filler-content" *ngFor="let c of fillerContent">Filler Content</div>
       </div>
-      <mat-toolbar *ngIf="showFooter && coverHeader">Footer</mat-toolbar>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

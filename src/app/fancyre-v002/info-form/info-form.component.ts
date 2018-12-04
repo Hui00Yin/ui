@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ResService} from '../res.service';
 
 @Component({
   selector: 'app-info-form',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-form.component.scss']
 })
 export class InfoFormComponent implements OnInit {
+  constructor(private resService: ResService) {
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
